@@ -14,10 +14,6 @@ player.on(
 player
   .setCurrentTime(localStorage.getItem('videoplayer-current-time'))
   .catch(function (error) {
-    switch (error.name) {
-      case 'RangeError':
-        break;
-      default:
-        break;
-    }
+    console.log(error.name);
+    console.log(error.message);
   });
