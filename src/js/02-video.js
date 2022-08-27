@@ -11,8 +11,8 @@ player.on(
   }, 1000)
 );
 
-player
-  .setCurrentTime(localStorage.getItem('videoplayer-current-time'))
-  .catch(function (error) {
-    console.error('Get state error: ', error.message);
-  });
+const savedTime = localStorage.getItem('videoplayer-current-time');
+
+if (savedTime) {
+  player.setCurrentTime(savedTime);
+}
